@@ -1,0 +1,101 @@
+@model InventoryViewModel
+@{
+    ViewData["Title"] = "Inventory";
+    ViewData["Section"] = "inventory";
+    var filters = new (string Label, StockLevel? Level, int Count)[]
+    {
+        ("All", null, Model.TotalCount),
+        ("Low", StockLevel.Low, Model.LowCount),
+        ("Out of stock", StockLevel.Out, Model.OutCount),
+    };
+}
+
+<div class="page-header">
+    <div>
+        <div class="page-eyebrow">DC-01 · Stock ledger</div>
+        <h1 class="page-title">Inventory</h1>
+        <p class="page-subtitle">@Model.TotalCount SKUs on record.</p>
+    </div>
+    <a class="btn btn-outline-dark" asp-action="Import">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
+        Receive stock
+    </a>
+</div>
+
+<partial name="_Flash" />
+
+<div class="panel">
+    @if (Model.TotalCount == 0)
+    {
+        <div class="empty-state">
+            <h2>No stock on record</h2>
+            <p>Receive the product list to load SKUs and their stock counts.</p>
+            <a class="btn btn-primary" asp-action="Import">Receive stock</a>
+        </div>
+    }
+    else
+    {
+        <form class="toolbar" method="get" asp-action="Index">
+            <div class="filter-tabs" role="tablist">
+                @foreach (var filter in filters)
+                {
+                    <a class="filter-tab @(Model.Level == filter.Level ? "active" : "")"
+                       asp-action="Index" asp-route-level="@filter.Level" asp-route-q="@Model.Query">
+                        @filter.Label <span class="filter-count">@filter.Count</span>
+                    </a>
+                }
+            </div>
+            @if (Model.Level is not null)
+            {
+                <input type="hidden" name="level" value="@Model.Level" />
+            }
+            <div class="toolbar-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="search" name="q" value="@Model.Query" placeholder="Scan or type SKU / name" aria-label="Search stock" />
+            </div>
+        </form>
+
+        @if (Model.Items.Count == 0)
+        {
+            <div class="empty-state">
+                <h2>No matching SKUs</h2>
+                <p>Nothing matches this filter.</p>
+                <a class="btn btn-outline-dark" asp-action="Index">Clear filter</a>
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table data-table">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Item</th>
+                            <th class="num">Unit weight</th>
+                            <th class="num">On hand</th>
+                            <th class="bar-col"><span class="visually-hidden">Stock bar</span></th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Items)
+                        {
+                            var level = item.Level();
+                            var pct = Model.MaxStock > 0 ? Math.Max(item.Stock, 0) * 100 / Model.MaxStock : 0;
+                            <tr>
+                                <td><span class="sku">@item.Sku</span></td>
+                                <td>@item.Name</td>
+                                <td class="num">@Formats.Weight(item.WeightGrams)</td>
+                                <td class="num qty">@item.Stock</td>
+                                <td class="bar-col">
+                                    <div class="stock-bar stock-bar-@level.ToString().ToLowerInvariant()"><span style="width: @pct%"></span></div>
+                                </td>
+                                <td><partial name="_StockLevel" model="level" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+</div>

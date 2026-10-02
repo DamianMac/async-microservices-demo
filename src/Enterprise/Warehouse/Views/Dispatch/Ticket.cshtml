@@ -1,0 +1,116 @@
+@model DispatchTicketViewModel
+@{
+    var d = Model.Dispatch;
+    var pending = d.Status == DispatchStatus.Pending;
+    var a = d.DeliveryAddress;
+    ViewData["Title"] = $"Ticket {d.Reference}";
+    ViewData["Section"] = pending ? "picking" : "dispatched";
+}
+
+<div class="page-header">
+    <div>
+        <div class="page-eyebrow">
+            <a asp-action="Index" asp-route-status="@d.Status">@(pending ? "Pick queue" : "Dispatched")</a> · Ticket
+        </div>
+        <h1 class="page-title">Order <span class="ticket-ref">@d.Reference</span></h1>
+        <p class="page-subtitle">
+            Received @d.ReceivedAt.ToLocalTime().ToString("d MMM, HH:mm")
+            @if (!pending)
+            {
+                <text>· dispatched @d.DispatchedAt!.Value.ToLocalTime().ToString("d MMM, HH:mm")</text>
+            }
+        </p>
+    </div>
+    @if (pending)
+    {
+        <form method="post" asp-action="Complete" asp-route-id="@d.OrderId">
+            <button type="submit" class="btn btn-primary btn-lg">
+                <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                Complete
+            </button>
+        </form>
+    }
+    else
+    {
+        <span class="level level-ok ticket-status">Dispatched</span>
+    }
+</div>
+
+<partial name="_Flash" />
+
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Pick list</h2>
+                <span class="small text-muted">@d.PickList.Count lines · @d.Units units</span>
+            </div>
+            <div class="table-responsive">
+                <table class="table data-table">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Item</th>
+                            <th class="num">Pick</th>
+                            @if (pending)
+                            {
+                                <th class="num">On hand</th>
+                                <th>Level</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var line in d.PickList)
+                        {
+                            Model.Stock.TryGetValue(line.Sku, out var item);
+                            <tr>
+                                <td><span class="sku">@line.Sku</span></td>
+                                <td>@line.Name</td>
+                                <td class="num qty">@line.Quantity</td>
+                                @if (pending)
+                                {
+                                    <td class="num">@(item?.Stock.ToString() ?? "—")</td>
+                                    <td>
+                                        @if (item == null)
+                                        {
+                                            <span class="level level-out">Not on record</span>
+                                        }
+                                        else
+                                        {
+                                            <partial name="_StockLevel" model="item.Level()" />
+                                        }
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel ship-label">
+            <div class="panel-header"><h2 class="panel-title">Ship to</h2></div>
+            <div class="panel-body">
+                <address class="mb-0">
+                    <strong>@a.RecipientName</strong><br />
+                    @a.Line1<br />
+                    @if (!string.IsNullOrEmpty(a.Line2))
+                    {
+                        @a.Line2<br />
+                    }
+                    @a.Suburb @a.State @a.Postcode<br />
+                    @a.Country
+                    @if (!string.IsNullOrEmpty(a.Phone))
+                    {
+                        <br /><span class="text-muted">@a.Phone</span>
+                    }
+                </address>
+            </div>
+            <div class="panel-footer ship-label-footer">
+                <span class="text-muted small">Customer</span>
+                <span>@d.CustomerName</span>
+            </div>
+        </div>
+    </div>
+</div>

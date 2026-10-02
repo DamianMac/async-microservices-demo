@@ -1,0 +1,13 @@
+@model Product
+@if (Model.Status == ProductStatus.Published)
+{
+    <span class="status status-published">Published</span>
+}
+else if (Model.Price is null)
+{
+    <span class="status status-draft">Needs pricing</span>
+}
+else
+{
+    <span class="status status-pending">Ready to publish</span>
+}

@@ -1,0 +1,79 @@
+@model DispatchListViewModel
+@{
+    var pending = Model.Status == DispatchStatus.Pending;
+    ViewData["Title"] = pending ? "Pick queue" : "Dispatched";
+    ViewData["Section"] = pending ? "picking" : "dispatched";
+}
+
+<div class="page-header">
+    <div>
+        <div class="page-eyebrow">DC-01 · @(pending ? "Outbound" : "Dispatch log")</div>
+        <h1 class="page-title">@ViewData["Title"]</h1>
+        <p class="page-subtitle">
+            @(pending ? "Paid orders waiting to be picked, packed and sent, oldest first." : "Orders that have left the building, newest first.")
+        </p>
+    </div>
+</div>
+
+<partial name="_Flash" />
+
+<div class="panel">
+    <div class="toolbar">
+        <div class="filter-tabs" role="tablist">
+            <a class="filter-tab @(pending ? "active" : "")" asp-action="Index" asp-route-status="@DispatchStatus.Pending">
+                To pick <span class="filter-count">@Model.PendingCount</span>
+            </a>
+            <a class="filter-tab @(!pending ? "active" : "")" asp-action="Index" asp-route-status="@DispatchStatus.Dispatched">
+                Dispatched <span class="filter-count">@Model.DispatchedCount</span>
+            </a>
+        </div>
+    </div>
+
+    @if (Model.Dispatches.Count == 0)
+    {
+        <div class="empty-state">
+            <div class="empty-state-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h2>@(pending ? "No orders to pick" : "Nothing dispatched yet")</h2>
+            <p>@(pending ? "Orders queue here once they're paid." : "Completed tickets show up here.")</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table data-table">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Ship to</th>
+                        <th class="num">Lines</th>
+                        <th class="num">Units</th>
+                        <th class="num">@(pending ? "Received" : "Dispatched")</th>
+                        <th><span class="visually-hidden">Open</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var d in Model.Dispatches)
+                    {
+                        var at = pending ? d.ReceivedAt : d.DispatchedAt!.Value;
+                        <tr>
+                            <td><a class="sku" asp-action="Ticket" asp-route-id="@d.OrderId">@d.Reference</a></td>
+                            <td>@d.CustomerName</td>
+                            <td>@d.DeliveryAddress.Suburb @d.DeliveryAddress.State @d.DeliveryAddress.Postcode</td>
+                            <td class="num">@d.PickList.Count</td>
+                            <td class="num qty">@d.Units</td>
+                            <td class="num" title="@at.ToString("u")">@Formats.Ago(at)</td>
+                            <td class="text-end">
+                                <a class="btn btn-sm @(pending ? "btn-primary" : "btn-outline-dark")" asp-action="Ticket" asp-route-id="@d.OrderId">
+                                    @(pending ? "Pick" : "View")
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

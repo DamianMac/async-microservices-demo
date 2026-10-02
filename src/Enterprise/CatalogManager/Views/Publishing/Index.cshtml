@@ -1,0 +1,69 @@
+@model PublishingViewModel
+@{
+    ViewData["Title"] = "Publishing";
+    ViewData["Section"] = "publishing";
+    var last = Model.History.FirstOrDefault();
+}
+
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Publishing</h1>
+        <p class="page-subtitle">Send the catalog and its prices to the storefront.</p>
+    </div>
+</div>
+
+<partial name="_Flash" />
+
+<div class="panel publish-hero mb-4">
+    <div class="publish-hero-text">
+        <h2>Publish catalog</h2>
+        <p>
+            Publishes all <strong>@Model.ToPublishCount</strong> priced products and notifies the other services that a new catalog is available.
+            @if (Model.NeedsPricingCount > 0)
+            {
+                <span><strong>@Model.NeedsPricingCount</strong> without a price will be left out.</span>
+            }
+        </p>
+        <div class="publish-meta">
+            <span>
+                <strong>@Model.ChangedSincePublishCount</strong>
+                @(Model.ChangedSincePublishCount == 1 ? "product" : "products") new or changed since the last publish
+            </span>
+            <span>
+                Last published:
+                <strong>@(last is null ? "never" : last.PublishedAt.ToLocalTime().ToString("d MMM yyyy, h:mm tt", Formats.Currency))</strong>
+            </span>
+        </div>
+    </div>
+    <form asp-action="Publish" method="post">
+        <button class="btn btn-primary btn-publish" type="submit" @(Model.ToPublishCount == 0 ? "disabled" : "")>
+            <svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+            Publish @Model.ToPublishCount products
+        </button>
+    </form>
+</div>
+
+<div class="panel">
+    <div class="panel-header"><h2 class="panel-title">History</h2></div>
+    @if (Model.History.Count == 0)
+    {
+        <div class="panel-body text-secondary">The catalog hasn't been published yet.</div>
+    }
+    else
+    {
+        <table class="table data-table">
+            <thead>
+                <tr><th>Published</th><th class="num">Products</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var publication in Model.History)
+                {
+                    <tr>
+                        <td>@publication.PublishedAt.ToLocalTime().ToString("d MMM yyyy, h:mm:ss tt", Formats.Currency)</td>
+                        <td class="num">@publication.ProductCount</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

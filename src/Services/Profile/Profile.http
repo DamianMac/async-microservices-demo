@@ -1,0 +1,35 @@
+@Profile_HostAddress = http://localhost:5311
+
+POST {{Profile_HostAddress}}/auth/register
+Content-Type: application/json
+
+{ "email": "demo@example.com", "password": "password1", "firstName": "Demo", "lastName": "Customer" }
+
+###
+
+# @name login
+POST {{Profile_HostAddress}}/auth/login
+Content-Type: application/json
+
+{ "email": "demo@example.com", "password": "password1" }
+
+###
+
+GET {{Profile_HostAddress}}/account
+Authorization: Bearer {{login.response.body.token}}
+
+###
+
+POST {{Profile_HostAddress}}/addresses
+Authorization: Bearer {{login.response.body.token}}
+Content-Type: application/json
+
+{ "label": "Home", "recipientName": "Demo Customer", "line1": "1 Flinders St", "suburb": "Melbourne", "state": "VIC", "postcode": "3000" }
+
+###
+
+POST {{Profile_HostAddress}}/cards
+Authorization: Bearer {{login.response.body.token}}
+Content-Type: application/json
+
+{ "cardholderName": "Demo Customer", "number": "4242 4242 4242 4242", "expiryMonth": 12, "expiryYear": 2030, "cvc": "123" }

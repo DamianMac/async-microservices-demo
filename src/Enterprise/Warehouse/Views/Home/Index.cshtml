@@ -1,0 +1,136 @@
+@model DashboardViewModel
+@{
+    ViewData["Title"] = "Floor";
+    ViewData["Section"] = "dashboard";
+}
+
+<div class="page-header">
+    <div>
+        <div class="page-eyebrow">DC-01 · Floor overview</div>
+        <h1 class="page-title">Warehouse floor</h1>
+        <p class="page-subtitle">Stock on hand and what needs replenishing.</p>
+    </div>
+    <a class="btn btn-primary" asp-controller="Inventory" asp-action="Import">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
+        Receive stock
+    </a>
+</div>
+
+<div class="kpis">
+    <div class="kpi">
+        <div class="kpi-label">SKUs</div>
+        <div class="kpi-value">@Model.SkuCount</div>
+        <div class="kpi-hint">Tracked lines</div>
+    </div>
+    <div class="kpi">
+        <div class="kpi-label">Units on hand</div>
+        <div class="kpi-value">@Model.UnitsOnHand.ToString("N0")</div>
+        <div class="kpi-hint">Across all SKUs</div>
+    </div>
+    <div class="kpi">
+        <div class="kpi-label">Weight on hand</div>
+        <div class="kpi-value">@Formats.Kilograms(Model.WeightOnHandGrams)</div>
+        <div class="kpi-hint">SKUs with a known weight</div>
+    </div>
+    <div class="kpi kpi-warn">
+        <div class="kpi-label">Low stock</div>
+        <div class="kpi-value">@Model.LowCount</div>
+        <div class="kpi-hint">@StockLevels.LowStockThreshold units or fewer</div>
+    </div>
+    <div class="kpi kpi-alert">
+        <div class="kpi-label">Out of stock</div>
+        <div class="kpi-value">@Model.OutCount</div>
+        <div class="kpi-hint">Can't be picked</div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="panel h-100">
+            <div class="panel-header">
+                <h2 class="panel-title">Replenishment</h2>
+                @if (Model.SkuCount > 0)
+                {
+                    <a class="small" asp-controller="Inventory" asp-action="Index">Full inventory</a>
+                }
+            </div>
+            @if (Model.SkuCount == 0)
+            {
+                <div class="empty-state">
+                    <h2>No stock on record</h2>
+                    <p>Receive the product list to load SKUs and their stock counts.</p>
+                    <a class="btn btn-primary" asp-controller="Inventory" asp-action="Import">Receive stock</a>
+                </div>
+            }
+            else if (Model.NeedsReplenishment.Count == 0)
+            {
+                <div class="empty-state">
+                    <h2>All stocked</h2>
+                    <p>Every SKU has more than @StockLevels.LowStockThreshold units on hand.</p>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table data-table">
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Item</th>
+                                <th class="num">On hand</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.NeedsReplenishment)
+                            {
+                                <tr>
+                                    <td><span class="sku">@item.Sku</span></td>
+                                    <td>@item.Name</td>
+                                    <td class="num">@item.Stock</td>
+                                    <td><partial name="_StockLevel" model="item.Level()" /></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel h-100">
+            <div class="panel-header">
+                <h2 class="panel-title">Pick queue</h2>
+                @if (Model.PickQueue.Count > 0)
+                {
+                    <a class="small" asp-controller="Dispatch" asp-action="Index">@Model.PickQueue.Count to pick</a>
+                }
+            </div>
+            @if (Model.PickQueue.Count == 0)
+            {
+                <div class="empty-state">
+                    <div class="empty-state-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </div>
+                    <h2>No orders to pick</h2>
+                    <p>Paid orders from the Orders service queue here.</p>
+                </div>
+            }
+            else
+            {
+                <ul class="pick-list">
+                    @foreach (var d in Model.PickQueue.Take(8))
+                    {
+                        <li>
+                            <a asp-controller="Dispatch" asp-action="Ticket" asp-route-id="@d.OrderId">
+                                <span class="sku">@d.Reference</span>
+                                <span class="pick-list-name">@d.CustomerName</span>
+                                <span class="pick-list-meta">@d.Units units · @Formats.Ago(d.ReceivedAt)</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>

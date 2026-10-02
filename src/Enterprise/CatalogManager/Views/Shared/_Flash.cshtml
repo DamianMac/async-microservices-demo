@@ -1,0 +1,7 @@
+@if (TempData["Flash"] is string flash)
+{
+    <div class="flash" role="status">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        @flash
+    </div>
+}

@@ -1,0 +1,24 @@
+@model Product
+<tr>
+    <td>
+        <div class="product-cell">
+            @if (Model.ImageUrl is not null)
+            {
+                <img class="product-thumb" src="@Model.ImageUrl" alt="" loading="lazy" />
+            }
+            else
+            {
+                <span class="product-thumb"></span>
+            }
+            <div>
+                <a class="product-name" asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id">@Model.Name</a>
+                <div class="sku">@Model.Sku</div>
+            </div>
+        </div>
+    </td>
+    <td><span class="category">@Model.Category.Replace('-', ' ')</span></td>
+    <td class="num">@(Model.Price is decimal price ? price.ToString("C", Formats.Currency) : "—")</td>
+    <td>
+        <partial name="_ProductStatus" model="Model" />
+    </td>
+</tr>

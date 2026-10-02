@@ -1,0 +1,85 @@
+services:
+  seq:
+    image: datalust/seq:latest
+    ports:
+      - "5341:80"
+    environment:
+      ACCEPT_EULA: "Y"
+      SEQ_FIRSTRUN_NOAUTHENTICATION: true
+    volumes:
+        - ./data/seq:/data
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "asyncdemo1!"
+      MSSQL_PID: Developer
+    expose:
+      - 1433
+    volumes:
+          - ./data/sqlserver/data:/var/opt/mssql/data
+          - ./data/sqlserver/log:/var/opt/mssql/log
+          - ./data/sqlserver/secrets:/var/opt/mssql/secrets
+
+  postgres:
+    image: postgres:17
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: asyncdemo1!
+    expose:
+      - 5432
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+
+  nats:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    expose:
+      - 4222
+      - 8222
+    command: "-js -m 8222 --user admin --pass password"
+
+
+  nats-dashboard:
+    image: mdawar/nats-dashboard:latest
+    ports:
+      - "8000:80"
+    environment:
+      # Some UIs allow pre-configuring the server URL
+      - NATS_URL=http://nats:8222
+    depends_on:
+      - nats
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data/caddy
+
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    container_name: async-mailpit
+    ports:
+      - 1025:1025
+      - 8025:8025
+
+
+networks:
+  default:
+    name: "asyncdemo"
+
+volumes:
+  caddy_data:

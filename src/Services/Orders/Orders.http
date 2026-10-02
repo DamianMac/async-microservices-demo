@@ -1,0 +1,8 @@
+@Orders_HostAddress = http://localhost:5053
+# A token from Profile's POST /auth/login
+@token = paste-a-token-here
+
+GET {{Orders_HostAddress}}/orders
+Authorization: Bearer {{token}}
+
+###

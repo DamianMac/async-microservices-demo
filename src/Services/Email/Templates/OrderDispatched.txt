@@ -1,0 +1,20 @@
+Subject: Your order {{OrderRef}} is on its way
+
+Hi {{FirstName}},
+
+Good news: your Nimbus Coffee Co. order {{OrderRef}} has left the warehouse.
+
+What's in the box:
+
+{{Items}}
+
+Total paid: {{Total}}
+
+Sending it to:
+
+{{Address}}
+
+Track it in your account: {{ShopUrl}}/orders/{{OrderId}}
+
+Happy brewing,
+The Nimbus Coffee Co. team

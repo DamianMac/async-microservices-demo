@@ -1,0 +1,73 @@
+@inject IConfiguration Configuration
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] · Warehouse</title>
+    <script type="importmap"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+@{
+    var section = ViewData["Section"] as string ?? "dashboard";
+}
+<body>
+    <header class="wh-header">
+        <div class="wh-header-inner">
+            <a class="wh-brand" asp-controller="Home" asp-action="Index">
+                <span class="wh-brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 8.38A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+                </span>
+                <span>
+                    <span class="wh-brand-name">Warehouse</span>
+                    <span class="wh-brand-sub">Nimbus Coffee Co. · DC-01</span>
+                </span>
+            </a>
+
+            <nav class="wh-nav" aria-label="Main">
+                <a class="wh-nav-item @(section == "dashboard" ? "active" : "")" asp-controller="Home" asp-action="Index">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+                    Floor
+                </a>
+                <a class="wh-nav-item @(section == "inventory" ? "active" : "")" asp-controller="Inventory" asp-action="Index">
+                    <svg viewBox="0 0 24 24"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12M6 14h12"/><rect x="6" y="10" width="12" height="12"/></svg>
+                    Inventory
+                </a>
+                <a class="wh-nav-item @(section == "import" ? "active" : "")" asp-controller="Inventory" asp-action="Import">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
+                    Receiving
+                </a>
+                <a class="wh-nav-item @(section == "picking" ? "active" : "")" asp-controller="Dispatch" asp-action="Index">
+                    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    Pick queue
+                </a>
+                <a class="wh-nav-item @(section == "dispatched" ? "active" : "")" asp-controller="Dispatch" asp-action="Index" asp-route-status="@DispatchStatus.Dispatched">
+                    <svg viewBox="0 0 24 24"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.29 7 12 12l8.71-5M12 22V12"/></svg>
+                    Dispatched
+                </a>
+            </nav>
+
+            <div class="wh-header-right">
+                <span class="wh-status" title="Instance">
+                    <span class="wh-dot" aria-hidden="true"></span> @Configuration["Instance"]
+                </span>
+                <span class="wh-clock" id="shift-clock" aria-label="Local time">--:--</span>
+            </div>
+        </div>
+        <div class="hazard" aria-hidden="true"></div>
+    </header>
+
+    <main role="main" class="wh-content">
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

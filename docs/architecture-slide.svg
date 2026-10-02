@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs>
+<marker id="e-2563eb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+<marker id="s-2563eb" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#2563eb"/></marker>
+<marker id="e-d97706" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker>
+<marker id="s-d97706" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#d97706"/></marker>
+<marker id="e-6b7280" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker>
+<marker id="s-6b7280" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6b7280"/></marker>
+</defs>
+<rect x="0" y="0" width="1920" height="1080" rx="0" fill="#ffffff" stroke="none" stroke-width="2" />
+<path d="M60,84 V70 H660 V84" fill="none" stroke="#2563eb" stroke-width="3"/>
+<text x="360.0" y="52" font-size="22" font-weight="700" fill="#2563eb" text-anchor="middle" letter-spacing="3">BUSINESS IN THE FRONT · HTTP</text>
+<path d="M760,84 V70 H1200 V84" fill="none" stroke="#1f2937" stroke-width="3"/>
+<text x="980.0" y="52" font-size="22" font-weight="700" fill="#1f2937" text-anchor="middle" letter-spacing="3">SERVICES</text>
+<path d="M1300,84 V70 H1860 V84" fill="none" stroke="#d97706" stroke-width="3"/>
+<text x="1580.0" y="52" font-size="22" font-weight="700" fill="#d97706" text-anchor="middle" letter-spacing="3">PARTY IN THE BACK · MESSAGING</text>
+<rect x="390" y="160" width="270" height="780" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="3" />
+<text x="525.0" y="202" font-size="32" font-weight="700" fill="#2563eb" text-anchor="middle" >Caddy</text>
+<text x="525.0" y="230" font-size="17" font-weight="600" fill="#1f2937" text-anchor="middle" >gateway + load balancer</text>
+<rect x="1300" y="160" width="90" height="780" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="3" />
+<text x="1355.0" y="550.0" font-size="30" font-weight="700" fill="#d97706" text-anchor="middle" transform="rotate(-90 1345.0 550.0)">NATS  ·  Nimbus bus</text>
+<rect x="770" y="260" width="440" height="150" rx="14" fill="#ffffff" stroke="#d1d5db" stroke-width="2" />
+<rect x="760" y="250" width="440" height="150" rx="14" fill="#ffffff" stroke="#d1d5db" stroke-width="2" />
+<text x="792" y="336.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="start" >Catalog</text>
+<rect x="930.0" y="308.0" width="48" height="34" rx="17" fill="#2563eb" stroke="none" stroke-width="2" />
+<text x="954.0" y="332.0" font-size="19" font-weight="700" fill="#fff" text-anchor="middle" >×2</text>
+<rect x="410" y="303.0" width="230" height="44" rx="10" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5" />
+<text x="426" y="332.0" font-size="19" font-weight="700" fill="#2563eb" text-anchor="start" >/catalog/*</text>
+<line x1="660" y1="325.0" x2="757" y2="325.0" stroke="#2563eb" stroke-width="3" marker-end="url(#e-2563eb)"/>
+<line x1="1213" y1="325.0" x2="1297" y2="325.0" stroke="#d97706" stroke-width="3" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="770" y="440" width="440" height="150" rx="14" fill="#ffffff" stroke="#d1d5db" stroke-width="2" />
+<rect x="760" y="430" width="440" height="150" rx="14" fill="#ffffff" stroke="#d1d5db" stroke-width="2" />
+<text x="792" y="516.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="start" >Orders</text>
+<rect x="912.0" y="488.0" width="48" height="34" rx="17" fill="#2563eb" stroke="none" stroke-width="2" />
+<text x="936.0" y="512.0" font-size="19" font-weight="700" fill="#fff" text-anchor="middle" >×2</text>
+<rect x="410" y="483.0" width="230" height="44" rx="10" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5" />
+<text x="426" y="512.0" font-size="19" font-weight="700" fill="#2563eb" text-anchor="start" >/orders/*</text>
+<line x1="660" y1="505.0" x2="757" y2="505.0" stroke="#2563eb" stroke-width="3" marker-end="url(#e-2563eb)"/>
+<line x1="1213" y1="505.0" x2="1297" y2="505.0" stroke="#d97706" stroke-width="3" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="760" y="610" width="440" height="150" rx="14" fill="#ffffff" stroke="#d1d5db" stroke-width="2" />
+<text x="792" y="696.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="start" >Search</text>
+<rect x="410" y="663.0" width="230" height="44" rx="10" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5" />
+<text x="426" y="692.0" font-size="19" font-weight="700" fill="#2563eb" text-anchor="start" >/search/*</text>
+<line x1="660" y1="685.0" x2="757" y2="685.0" stroke="#2563eb" stroke-width="3" marker-end="url(#e-2563eb)"/>
+<line x1="1203" y1="685.0" x2="1297" y2="685.0" stroke="#d97706" stroke-width="3" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="760" y="790" width="440" height="150" rx="14" fill="#ffffff" stroke="#d1d5db" stroke-width="2" />
+<text x="792" y="876.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="start" >Profile</text>
+<rect x="410" y="843.0" width="230" height="44" rx="10" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5" />
+<text x="426" y="872.0" font-size="19" font-weight="700" fill="#2563eb" text-anchor="start" >/profile/*</text>
+<line x1="660" y1="865.0" x2="757" y2="865.0" stroke="#2563eb" stroke-width="3" marker-end="url(#e-2563eb)"/>
+<line x1="1203" y1="865.0" x2="1297" y2="865.0" stroke="#d97706" stroke-width="3" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="60" y="440.0" width="240" height="190" rx="18" fill="#ffffff" stroke="#2563eb" stroke-width="3" />
+<path d="M60,476.0 V458.0 a18,18 0 0 1 18,-18 H282 a18,18 0 0 1 18,18 V476.0 z" fill="#2563eb"/>
+<circle cx="82" cy="458.0" r="5" fill="#fff" opacity="0.85"/>
+<circle cx="99" cy="458.0" r="5" fill="#fff" opacity="0.85"/>
+<circle cx="116" cy="458.0" r="5" fill="#fff" opacity="0.85"/>
+<text x="180.0" y="540.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="middle" >Storefront</text>
+<text x="180.0" y="574.0" font-size="19" font-weight="500" fill="#6b7280" text-anchor="middle" >Nuxt SPA</text>
+<line x1="300" y1="545.0" x2="387" y2="545.0" stroke="#2563eb" stroke-width="3" marker-end="url(#e-2563eb)"/>
+<text x="180.0" y="680.0" font-size="20" font-weight="700" fill="#2563eb" text-anchor="middle" >One API origin</text>
+<rect x="1490" y="250" width="370" height="150" rx="14" fill="#ffffff" stroke="#6b7280" stroke-width="2" />
+<text x="1675.0" y="321.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="middle" >CatalogManager</text>
+<text x="1675.0" y="355.0" font-size="19" font-weight="500" fill="#6b7280" text-anchor="middle" >back office · MVC</text>
+<line x1="1393" y1="325.0" x2="1487" y2="325.0" stroke="#d97706" stroke-width="3" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="1490" y="430" width="370" height="150" rx="14" fill="#ffffff" stroke="#6b7280" stroke-width="2" />
+<text x="1675.0" y="501.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="middle" >Warehouse</text>
+<text x="1675.0" y="535.0" font-size="19" font-weight="500" fill="#6b7280" text-anchor="middle" >back office · MVC</text>
+<line x1="1393" y1="505.0" x2="1487" y2="505.0" stroke="#d97706" stroke-width="3" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="1490" y="610" width="370" height="150" rx="14" fill="#ffffff" stroke="#6b7280" stroke-width="2" />
+<text x="1675.0" y="681.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="middle" >PaymentGateway</text>
+<text x="1675.0" y="715.0" font-size="19" font-weight="500" fill="#6b7280" text-anchor="middle" >bus only · no route</text>
+<line x1="1393" y1="685.0" x2="1487" y2="685.0" stroke="#d97706" stroke-width="3" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="1490" y="790" width="370" height="150" rx="14" fill="#ffffff" stroke="#6b7280" stroke-width="2" />
+<text x="1675.0" y="861.0" font-size="30" font-weight="700" fill="#1f2937" text-anchor="middle" >Email</text>
+<text x="1675.0" y="895.0" font-size="19" font-weight="500" fill="#6b7280" text-anchor="middle" >bus only · no route</text>
+<line x1="1393" y1="865.0" x2="1487" y2="865.0" stroke="#d97706" stroke-width="3" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+</svg>

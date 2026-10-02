@@ -1,0 +1,13 @@
+@model StockLevel
+@switch (Model)
+{
+    case StockLevel.Out:
+        <span class="level level-out">Out of stock</span>
+        break;
+    case StockLevel.Low:
+        <span class="level level-low">Low</span>
+        break;
+    default:
+        <span class="level level-ok">In stock</span>
+        break;
+}

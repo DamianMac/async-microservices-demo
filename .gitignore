@@ -1,0 +1,14 @@
+/infra/data
+bin/
+obj/
+.run/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+.idea
+
+# Product images copied in by the CatalogManager import
+src/Enterprise/CatalogManager/wwwroot/images/products/
+
+# Product images downloaded by the Catalog service when a new catalog is published
+src/Services/Catalog/wwwroot/images/products/

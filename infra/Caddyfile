@@ -1,0 +1,49 @@
+http://seq.localtest.me {
+    reverse_proxy seq:80
+}
+http://mail.localtest.me {
+    reverse_proxy mailpit:8025
+}
+
+http://nats.localtest.me {
+    reverse_proxy nats-dashboard:80
+}
+
+http://api.localtest.me {
+    handle_path /catalog/* {
+        reverse_proxy host.docker.internal:5263 host.docker.internal:5264 {
+            lb_policy round_robin
+            health_uri /health
+            health_interval 30s
+            lb_try_duration 5s
+            fail_duration 30s
+        }
+    }
+    handle_path /orders/* {
+        reverse_proxy host.docker.internal:5053 host.docker.internal:5054 {
+            lb_policy round_robin
+            health_uri /health
+            health_interval 30s
+            lb_try_duration 5s
+            fail_duration 30s
+        }
+    }
+    handle_path /search/* {
+        reverse_proxy host.docker.internal:5069
+    }
+    handle_path /profile/* {
+        reverse_proxy host.docker.internal:5311
+    }
+}
+
+http://shop.localtest.me {
+    reverse_proxy host.docker.internal:3000
+}
+
+http://warehouse.localtest.me {
+    reverse_proxy host.docker.internal:5223
+}
+
+http://catalog-manager.localtest.me {
+    reverse_proxy host.docker.internal:5003
+}

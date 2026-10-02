@@ -1,0 +1,47 @@
+@model ImportViewModel
+@{
+    ViewData["Title"] = "Receiving";
+    ViewData["Section"] = "import";
+}
+
+<div class="page-header">
+    <div>
+        <div class="page-eyebrow">DC-01 · Inbound</div>
+        <h1 class="page-title">Receive stock</h1>
+        <p class="page-subtitle">Load SKUs, stock counts and weights from the product list.</p>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-lg-7">
+        <form class="panel" asp-action="Import" method="post">
+            <div class="panel-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <label class="form-label fw-medium" asp-for="Path"></label>
+                <input class="form-control font-monospace" asp-for="Path" />
+                <span class="text-danger small" asp-validation-for="Path"></span>
+                <div class="form-text">Relative paths are resolved from the app's folder.</div>
+            </div>
+            <div class="panel-footer">
+                <a class="btn btn-link text-secondary" asp-action="Index">Cancel</a>
+                <button class="btn btn-primary" type="submit">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
+                    Receive
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-5">
+        <div class="panel">
+            <div class="panel-header"><h2 class="panel-title">How receiving works</h2></div>
+            <div class="panel-body">
+                <ul class="notes">
+                    <li>Only the SKU, name, stock count and weight are read from the file.</li>
+                    <li>Items are matched on SKU, so receiving again updates them rather than adding duplicates.</li>
+                    <li>New SKUs take their stock count from the file. Existing SKUs keep the count held here.</li>
+                    <li>Items with no weight in the file (equipment) show a dash.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

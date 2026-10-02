@@ -1,0 +1,356 @@
+{
+  "currency": "AUD",
+  "products": [
+    {
+      "sku": "SO-ETH-YIR",
+      "name": "Ethiopia Yirgacheffe",
+      "category": "single-origin",
+      "description": "A bright, floral washed coffee from smallholders around Yirgacheffe. Lovely as a filter, surprisingly sweet as espresso.",
+      "image": "images/so-eth-yir.svg",
+      "price": 22.00,
+      "stock": 12,
+      "coffee": { "origin": "Ethiopia", "region": "Yirgacheffe", "process": "washed", "roast": "light", "weightGrams": 250, "tastingNotes": ["jasmine", "lemon", "bergamot"] }
+    },
+    {
+      "sku": "SO-ETH-GUJ",
+      "name": "Ethiopia Guji Natural",
+      "category": "single-origin",
+      "description": "Sun-dried on raised beds, giving a big, jammy cup that tastes like a punnet of berries.",
+      "image": "images/so-eth-guj.svg",
+      "price": 23.50,
+      "stock": 41,
+      "coffee": { "origin": "Ethiopia", "region": "Guji", "process": "natural", "roast": "light", "weightGrams": 250, "tastingNotes": ["blueberry", "strawberry jam", "cacao"] }
+    },
+    {
+      "sku": "SO-KEN-NYE",
+      "name": "Kenya Nyeri AA",
+      "category": "single-origin",
+      "description": "Top-grade beans from the slopes of Mount Kenya. Juicy and bold with a sparkling acidity.",
+      "image": "images/so-ken-nye.svg",
+      "price": 25.00,
+      "stock": 28,
+      "coffee": { "origin": "Kenya", "region": "Nyeri", "process": "washed", "roast": "light", "weightGrams": 250, "tastingNotes": ["blackcurrant", "grapefruit", "tomato vine"] }
+    },
+    {
+      "sku": "SO-RWA-HUY",
+      "name": "Rwanda Huye Mountain",
+      "category": "single-origin",
+      "description": "Grown at altitude in the Southern Province and processed at a single washing station.",
+      "image": "images/so-rwa-huy.svg",
+      "price": 22.50,
+      "stock": 35,
+      "coffee": { "origin": "Rwanda", "region": "Huye", "process": "washed", "roast": "light", "weightGrams": 250, "tastingNotes": ["red apple", "black tea", "honey"] }
+    },
+    {
+      "sku": "SO-BUR-KAY",
+      "name": "Burundi Kayanza",
+      "category": "single-origin",
+      "description": "A delicate, tea-like coffee with a long, sweet finish.",
+      "image": "images/so-bur-kay.svg",
+      "price": 22.00,
+      "stock": 0,
+      "coffee": { "origin": "Burundi", "region": "Kayanza", "process": "washed", "roast": "light", "weightGrams": 250, "tastingNotes": ["cranberry", "rosehip", "brown sugar"] }
+    },
+    {
+      "sku": "SO-COL-HUI",
+      "name": "Colombia Huila",
+      "category": "single-origin",
+      "description": "An easy-going, all-rounder Colombian. Works in every brew method and with or without milk.",
+      "image": "images/so-col-hui.svg",
+      "price": 20.00,
+      "stock": 120,
+      "coffee": { "origin": "Colombia", "region": "Huila", "process": "washed", "roast": "medium", "weightGrams": 250, "tastingNotes": ["caramel", "red apple", "milk chocolate"] }
+    },
+    {
+      "sku": "SO-COL-NAR",
+      "name": "Colombia Nariño Pink Bourbon",
+      "category": "single-origin",
+      "description": "A rare varietal from high in Nariño. Small lot, gone when it's gone.",
+      "image": "images/so-col-nar.svg",
+      "price": 32.00,
+      "stock": 6,
+      "coffee": { "origin": "Colombia", "region": "Nariño", "process": "washed", "roast": "light", "weightGrams": 250, "tastingNotes": ["peach", "hibiscus", "panela"] }
+    },
+    {
+      "sku": "SO-BRA-CER",
+      "name": "Brazil Cerrado",
+      "category": "single-origin",
+      "description": "Low acidity, heavy body and loads of nutty sweetness. A classic espresso base.",
+      "image": "images/so-bra-cer.svg",
+      "price": 18.00,
+      "stock": 150,
+      "coffee": { "origin": "Brazil", "region": "Cerrado Mineiro", "process": "natural", "roast": "medium-dark", "weightGrams": 250, "tastingNotes": ["hazelnut", "dark chocolate", "toffee"] }
+    },
+    {
+      "sku": "SO-BRA-MOG",
+      "name": "Brazil Mogiana Pulped Natural",
+      "category": "single-origin",
+      "description": "Pulped natural processing keeps the sweetness up and the body syrupy.",
+      "image": "images/so-bra-mog.svg",
+      "price": 19.00,
+      "stock": 72,
+      "coffee": { "origin": "Brazil", "region": "Alta Mogiana", "process": "honey", "roast": "medium", "weightGrams": 250, "tastingNotes": ["peanut brittle", "cocoa", "dried fig"] }
+    },
+    {
+      "sku": "SO-GUA-ANT",
+      "name": "Guatemala Antigua",
+      "category": "single-origin",
+      "description": "Grown in volcanic soil between three volcanoes. Balanced, spicy and chocolatey.",
+      "image": "images/so-gua-ant.svg",
+      "price": 21.00,
+      "stock": 58,
+      "coffee": { "origin": "Guatemala", "region": "Antigua", "process": "washed", "roast": "medium", "weightGrams": 250, "tastingNotes": ["cocoa", "orange zest", "clove"] }
+    },
+    {
+      "sku": "SO-CRI-TAR",
+      "name": "Costa Rica Tarrazú Honey",
+      "category": "single-origin",
+      "description": "Honey processed, leaving some fruit on the bean while it dries. Sweet, round and clean.",
+      "image": "images/so-cri-tar.svg",
+      "price": 23.00,
+      "stock": 44,
+      "coffee": { "origin": "Costa Rica", "region": "Tarrazú", "process": "honey", "roast": "medium", "weightGrams": 250, "tastingNotes": ["apricot", "golden syrup", "almond"] }
+    },
+    {
+      "sku": "SO-HON-MAR",
+      "name": "Honduras Marcala",
+      "category": "single-origin",
+      "description": "From a producer cooperative in La Paz. A comforting everyday coffee.",
+      "image": "images/so-hon-mar.svg",
+      "price": 19.50,
+      "stock": 80,
+      "coffee": { "origin": "Honduras", "region": "Marcala", "process": "washed", "roast": "medium", "weightGrams": 250, "tastingNotes": ["milk chocolate", "plum", "brown sugar"] }
+    },
+    {
+      "sku": "SO-PAN-BOQ",
+      "name": "Panama Boquete Geisha",
+      "category": "single-origin",
+      "description": "The famous Geisha varietal, grown in Boquete. Our most expensive coffee, and worth it for a special occasion.",
+      "image": "images/so-pan-boq.svg",
+      "price": 58.00,
+      "stock": 3,
+      "coffee": { "origin": "Panama", "region": "Boquete", "process": "washed", "roast": "light", "weightGrams": 100, "tastingNotes": ["jasmine", "mango", "earl grey"] }
+    },
+    {
+      "sku": "SO-PER-CAJ",
+      "name": "Peru Cajamarca",
+      "category": "single-origin",
+      "description": "An organic-certified lot from northern Peru. Mellow and nutty.",
+      "image": "images/so-per-caj.svg",
+      "price": 20.00,
+      "stock": 66,
+      "coffee": { "origin": "Peru", "region": "Cajamarca", "process": "washed", "roast": "medium", "weightGrams": 250, "tastingNotes": ["walnut", "caramel", "red grape"] }
+    },
+    {
+      "sku": "SO-SUM-GAY",
+      "name": "Sumatra Gayo",
+      "category": "single-origin",
+      "description": "Wet-hulled in the Indonesian style, giving an earthy, full-bodied cup that stands up to milk.",
+      "image": "images/so-sum-gay.svg",
+      "price": 21.00,
+      "stock": 52,
+      "coffee": { "origin": "Indonesia", "region": "Aceh", "process": "wet-hulled", "roast": "dark", "weightGrams": 250, "tastingNotes": ["cedar", "dark chocolate", "tobacco"] }
+    },
+    {
+      "sku": "SO-PNG-WAH",
+      "name": "Papua New Guinea Wahgi Valley",
+      "category": "single-origin",
+      "description": "From smallholder gardens in the Western Highlands. Tropical and lively.",
+      "image": "images/so-png-wah.svg",
+      "price": 21.50,
+      "stock": 30,
+      "coffee": { "origin": "Papua New Guinea", "region": "Wahgi Valley", "process": "washed", "roast": "medium", "weightGrams": 250, "tastingNotes": ["pineapple", "cane sugar", "cocoa nib"] }
+    },
+    {
+      "sku": "SO-IND-MAL",
+      "name": "India Monsooned Malabar",
+      "category": "single-origin",
+      "description": "Exposed to monsoon winds for months, which swells the beans and mutes the acidity. Unusual and very smooth.",
+      "image": "images/so-ind-mal.svg",
+      "price": 20.50,
+      "stock": 25,
+      "coffee": { "origin": "India", "region": "Malabar Coast", "process": "monsooned", "roast": "medium-dark", "weightGrams": 250, "tastingNotes": ["spice", "malt", "pipe tobacco"] }
+    },
+    {
+      "sku": "SO-AUS-ATH",
+      "name": "Australia Atherton Tablelands",
+      "category": "single-origin",
+      "description": "Grown in Far North Queensland. A low-acid, gentle coffee from close to home.",
+      "image": "images/so-aus-ath.svg",
+      "price": 26.00,
+      "stock": 12,
+      "coffee": { "origin": "Australia", "region": "Atherton Tablelands", "process": "washed", "roast": "medium", "weightGrams": 250, "tastingNotes": ["macadamia", "milk chocolate", "stone fruit"] }
+    },
+    {
+      "sku": "BL-CUMULUS",
+      "name": "Cumulus Espresso Blend",
+      "category": "blend",
+      "description": "Our house espresso. Brazil and Colombia for body and sweetness, with a little Ethiopia for lift. Built for flat whites.",
+      "image": "images/bl-cumulus.svg",
+      "price": 19.00,
+      "stock": 220,
+      "coffee": { "origin": "Blend", "region": "Brazil, Colombia, Ethiopia", "process": "mixed", "roast": "medium-dark", "weightGrams": 250, "tastingNotes": ["chocolate", "caramel", "cherry"] }
+    },
+    {
+      "sku": "BL-CUMULUS-1KG",
+      "name": "Cumulus Espresso Blend 1kg",
+      "category": "blend",
+      "description": "The house espresso in a bigger bag, for home baristas who get through it fast.",
+      "image": "images/bl-cumulus-1kg.svg",
+      "price": 62.00,
+      "stock": 45,
+      "coffee": { "origin": "Blend", "region": "Brazil, Colombia, Ethiopia", "process": "mixed", "roast": "medium-dark", "weightGrams": 1000, "tastingNotes": ["chocolate", "caramel", "cherry"] }
+    },
+    {
+      "sku": "BL-STRATUS",
+      "name": "Stratus Filter Blend",
+      "category": "blend",
+      "description": "A lighter blend for pour-over, batch brew and plunger. Clean, sweet and fruity.",
+      "image": "images/bl-stratus.svg",
+      "price": 20.00,
+      "stock": 90,
+      "coffee": { "origin": "Blend", "region": "Ethiopia, Kenya, Costa Rica", "process": "mixed", "roast": "light", "weightGrams": 250, "tastingNotes": ["stone fruit", "honey", "citrus"] }
+    },
+    {
+      "sku": "BL-THUNDERHEAD",
+      "name": "Thunderhead Dark Roast",
+      "category": "blend",
+      "description": "Dark, bold and smoky. For people who like their coffee to fight back.",
+      "image": "images/bl-thunderhead.svg",
+      "price": 18.50,
+      "stock": 110,
+      "coffee": { "origin": "Blend", "region": "Sumatra, Brazil, India", "process": "mixed", "roast": "dark", "weightGrams": 250, "tastingNotes": ["molasses", "smoke", "bittersweet chocolate"] }
+    },
+    {
+      "sku": "BL-CIRRUS",
+      "name": "Cirrus Seasonal Blend",
+      "category": "blend",
+      "description": "Changes with the harvest. Right now it's a bright, juicy mix of East African coffees.",
+      "image": "images/bl-cirrus.svg",
+      "price": 21.00,
+      "stock": 38,
+      "coffee": { "origin": "Blend", "region": "Rwanda, Burundi, Kenya", "process": "washed", "roast": "light", "weightGrams": 250, "tastingNotes": ["raspberry", "lime", "raw sugar"] }
+    },
+    {
+      "sku": "BL-COLDBREW",
+      "name": "Cold Brew Coarse Grind",
+      "category": "blend",
+      "description": "Pre-ground coarse for cold brew. Steep overnight for a smooth, chocolatey concentrate.",
+      "image": "images/bl-coldbrew.svg",
+      "price": 19.50,
+      "stock": 55,
+      "coffee": { "origin": "Blend", "region": "Brazil, Guatemala", "process": "mixed", "roast": "medium-dark", "weightGrams": 250, "tastingNotes": ["cocoa", "vanilla", "toasted nuts"] }
+    },
+    {
+      "sku": "DC-COL-SWP",
+      "name": "Colombia Decaf (Sugarcane)",
+      "category": "decaf",
+      "description": "Decaffeinated using ethyl acetate from local sugarcane, which keeps a lovely sweetness.",
+      "image": "images/dc-col-swp.svg",
+      "price": 21.00,
+      "stock": 48,
+      "coffee": { "origin": "Colombia", "region": "Tolima", "process": "sugarcane decaf", "roast": "medium", "weightGrams": 250, "tastingNotes": ["toffee", "red apple", "cocoa"] }
+    },
+    {
+      "sku": "DC-MEX-SWP",
+      "name": "Mexico Swiss Water Decaf",
+      "category": "decaf",
+      "description": "Chemical-free Swiss Water decaf from Chiapas. Nutty and mild.",
+      "image": "images/dc-mex-swp.svg",
+      "price": 21.50,
+      "stock": 20,
+      "coffee": { "origin": "Mexico", "region": "Chiapas", "process": "swiss water decaf", "roast": "medium", "weightGrams": 250, "tastingNotes": ["almond", "milk chocolate", "brown butter"] }
+    },
+    {
+      "sku": "DC-BL-NIGHT",
+      "name": "Nightcloud Decaf Espresso",
+      "category": "decaf",
+      "description": "A decaf espresso blend that tastes like the real thing. For the after-dinner flat white.",
+      "image": "images/dc-bl-night.svg",
+      "price": 20.50,
+      "stock": 34,
+      "coffee": { "origin": "Blend", "region": "Colombia, Mexico", "process": "mixed decaf", "roast": "medium-dark", "weightGrams": 250, "tastingNotes": ["dark chocolate", "caramel", "malt"] }
+    },
+    {
+      "sku": "EQ-GRINDER-HAND",
+      "name": "Hand Grinder",
+      "category": "equipment",
+      "description": "Stainless steel conical burrs, 40 click settings, and it fits inside an AeroPress for travel.",
+      "image": "images/eq-grinder-hand.svg",
+      "price": 119.00,
+      "stock": 15
+    },
+    {
+      "sku": "EQ-DRIPPER",
+      "name": "Ceramic Pour-Over Dripper",
+      "category": "equipment",
+      "description": "A cone dripper with spiral ribs for an even flow. Makes one or two cups.",
+      "image": "images/eq-dripper.svg",
+      "price": 39.00,
+      "stock": 27
+    },
+    {
+      "sku": "EQ-FILTERS",
+      "name": "Paper Filters (100 pack)",
+      "category": "equipment",
+      "description": "Unbleached paper filters sized for our pour-over dripper.",
+      "image": "images/eq-filters.svg",
+      "price": 9.50,
+      "stock": 200
+    },
+    {
+      "sku": "EQ-KETTLE",
+      "name": "Gooseneck Kettle",
+      "category": "equipment",
+      "description": "A stovetop kettle with a slim spout for precise pouring. 1 litre.",
+      "image": "images/eq-kettle.svg",
+      "price": 69.00,
+      "stock": 11
+    },
+    {
+      "sku": "EQ-SCALES",
+      "name": "Brew Scales with Timer",
+      "category": "equipment",
+      "description": "Weighs to 0.1g with a built-in timer. Rechargeable over USB-C.",
+      "image": "images/eq-scales.svg",
+      "price": 59.00,
+      "stock": 18
+    },
+    {
+      "sku": "EQ-PLUNGER",
+      "name": "Glass Plunger (8 cup)",
+      "category": "equipment",
+      "description": "A classic French press with a double mesh filter.",
+      "image": "images/eq-plunger.svg",
+      "price": 45.00,
+      "stock": 22
+    },
+    {
+      "sku": "EQ-MOKA",
+      "name": "Stovetop Espresso Maker (6 cup)",
+      "category": "equipment",
+      "description": "Aluminium moka pot. Rich, strong coffee without an espresso machine.",
+      "image": "images/eq-moka.svg",
+      "price": 49.00,
+      "stock": 0
+    },
+    {
+      "sku": "EQ-KEEPCUP",
+      "name": "Reusable Cup 12oz",
+      "category": "equipment",
+      "description": "Tempered glass with a cork band. Fits under most cafe group heads.",
+      "image": "images/eq-keepcup.svg",
+      "price": 32.00,
+      "stock": 60
+    },
+    {
+      "sku": "EQ-CANISTER",
+      "name": "Airtight Bean Canister",
+      "category": "equipment",
+      "description": "Vacuum-seal lid that pushes air out to keep beans fresh for longer. Holds 500g.",
+      "image": "images/eq-canister.svg",
+      "price": 42.00,
+      "stock": 24
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1274" viewBox="0 0 1900 1274" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs>
+<marker id="e-2563eb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+<marker id="s-2563eb" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#2563eb"/></marker>
+<marker id="e-d97706" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker>
+<marker id="s-d97706" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#d97706"/></marker>
+<marker id="e-6b7280" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker>
+<marker id="s-6b7280" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#6b7280"/></marker>
+</defs>
+<rect x="0" y="0" width="1900" height="1274" rx="0" fill="#faf7f2" stroke="none" stroke-width="1.5" />
+<text x="40" y="56" font-size="30" font-weight="700" fill="#1f2937" text-anchor="start" >Nimbus Coffee Co. — Mullet Microservices</text>
+<text x="40" y="86" font-size="15" font-weight="400" fill="#6b7280" text-anchor="start" >Business in the front: HTTP through one load-balanced gateway. Party in the back: services talk over the bus.</text>
+<line x1="1460" y1="40" x2="1504" y2="40" stroke="#2563eb" stroke-width="2" marker-end="url(#e-2563eb)"/>
+<text x="1514" y="44" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >HTTP request</text>
+<line x1="1460" y1="62" x2="1504" y2="62" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<text x="1514" y="66" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >Nimbus messages over NATS</text>
+<line x1="1460" y1="84" x2="1504" y2="84" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#e-6b7280)"/>
+<text x="1514" y="88" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >Fetch after notification (HTTP)</text>
+<path d="M40,144 V134 H510 V144" fill="none" stroke="#2563eb" stroke-width="2"/>
+<text x="275.0" y="124" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle" letter-spacing="2">BUSINESS IN THE FRONT · HTTP</text>
+<path d="M590,144 V134 H1110 V144" fill="none" stroke="#1f2937" stroke-width="2"/>
+<text x="850.0" y="124" font-size="13" font-weight="700" fill="#1f2937" text-anchor="middle" letter-spacing="2">SERVICES · ASP.NET CORE WEB APIS</text>
+<path d="M1170,144 V134 H1860 V144" fill="none" stroke="#d97706" stroke-width="2"/>
+<text x="1515.0" y="124" font-size="13" font-weight="700" fill="#d97706" text-anchor="middle" letter-spacing="2">PARTY IN THE BACK · ASYNC MESSAGING</text>
+<rect x="290" y="160" width="220" height="618" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2" />
+<text x="308" y="190" font-size="20" font-weight="700" fill="#2563eb" text-anchor="start" >Caddy</text>
+<text x="308" y="210" font-size="12" font-weight="600" fill="#1f2937" text-anchor="start" >API gateway + load balancer</text>
+<text x="308" y="228" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >api.localtest.me</text>
+<rect x="598" y="258" width="520" height="120" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<rect x="590" y="250" width="520" height="120" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="608" y="280" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >Catalog</text>
+<rect x="691.6" y="265" width="30" height="20" rx="10" fill="#2563eb" stroke="none" stroke-width="1.5" />
+<text x="706.6" y="279" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >×2</text>
+<text x="608" y="302" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >:5263 · :5264</text>
+<text x="608" y="324" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >Postgres · Marten</text>
+<text x="608" y="344" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Serves products from an in-memory cache</text>
+<line x1="852" y1="266" x2="852" y2="354" stroke="#d1d5db"/>
+<text x="868" y="276" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">PUBLISHES / SENDS</text>
+<text x="868" y="292" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >CatalogUpdated</text>
+<text x="868" y="313" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">HANDLES</text>
+<text x="868" y="329" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >NewCatalogAvailable</text>
+<text x="868" y="344" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >LowStockWarning · OutOfStock</text>
+<text x="868" y="359" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >CatalogUpdated · stock alerts (multicast)</text>
+<rect x="304" y="284.0" width="192" height="52" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1" />
+<text x="316" y="305.0" font-size="13" font-weight="700" fill="#2563eb" text-anchor="start" >/catalog/*</text>
+<text x="316" y="324.0" font-size="11" font-weight="500" fill="#6b7280" text-anchor="start" >:5263 · :5264  round robin</text>
+<line x1="510" y1="310.0" x2="588" y2="310.0" stroke="#2563eb" stroke-width="2" marker-end="url(#e-2563eb)"/>
+<line x1="1120" y1="310.0" x2="1168" y2="310.0" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="598" y="394" width="520" height="120" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<rect x="590" y="386" width="520" height="120" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="608" y="416" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >Orders</text>
+<rect x="680.8" y="401" width="30" height="20" rx="10" fill="#2563eb" stroke="none" stroke-width="1.5" />
+<text x="695.8" y="415" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >×2</text>
+<text x="608" y="438" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >:5053 · :5054</text>
+<text x="608" y="460" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >SQL Server · EF Core</text>
+<text x="608" y="480" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Order saga: Pending → Paid → Completed</text>
+<line x1="852" y1="402" x2="852" y2="490" stroke="#d1d5db"/>
+<text x="868" y="412" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">PUBLISHES / SENDS</text>
+<text x="868" y="428" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >OrderPlaced · OrderConfirmedEvent</text>
+<text x="868" y="443" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >OrderCompleted</text>
+<text x="868" y="464" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">HANDLES</text>
+<text x="868" y="480" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >NewCatalogAvailable · PaymentSuccessful</text>
+<text x="868" y="495" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >OrderProcessed</text>
+<rect x="304" y="420.0" width="192" height="52" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1" />
+<text x="316" y="441.0" font-size="13" font-weight="700" fill="#2563eb" text-anchor="start" >/orders/*</text>
+<text x="316" y="460.0" font-size="11" font-weight="500" fill="#6b7280" text-anchor="start" >:5053 · :5054  round robin</text>
+<line x1="510" y1="446.0" x2="588" y2="446.0" stroke="#2563eb" stroke-width="2" marker-end="url(#e-2563eb)"/>
+<line x1="1120" y1="446.0" x2="1168" y2="446.0" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="590" y="522" width="520" height="120" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="608" y="552" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >Search</text>
+<text x="608" y="574" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >:5069</text>
+<text x="608" y="596" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >Postgres · EF Core</text>
+<text x="608" y="616" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Full-text search (tsvector)</text>
+<line x1="852" y1="538" x2="852" y2="626" stroke="#d1d5db"/>
+<text x="868" y="548" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">HANDLES</text>
+<text x="868" y="564" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >NewCatalogAvailable</text>
+<rect x="304" y="556.0" width="192" height="52" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1" />
+<text x="316" y="577.0" font-size="13" font-weight="700" fill="#2563eb" text-anchor="start" >/search/*</text>
+<text x="316" y="596.0" font-size="11" font-weight="500" fill="#6b7280" text-anchor="start" >:5069</text>
+<line x1="510" y1="582.0" x2="588" y2="582.0" stroke="#2563eb" stroke-width="2" marker-end="url(#e-2563eb)"/>
+<line x1="1112" y1="582.0" x2="1168" y2="582.0" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="590" y="658" width="520" height="120" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="608" y="688" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >Profile</text>
+<text x="608" y="710" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >:5311</text>
+<text x="608" y="732" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >SQL Server · EF Core</text>
+<text x="608" y="752" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Accounts, JWTs, addresses, fake cards</text>
+<line x1="852" y1="674" x2="852" y2="762" stroke="#d1d5db"/>
+<text x="868" y="684" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">PUBLISHES / SENDS</text>
+<text x="868" y="700" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >CustomerRegistered</text>
+<rect x="304" y="692.0" width="192" height="52" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1" />
+<text x="316" y="713.0" font-size="13" font-weight="700" fill="#2563eb" text-anchor="start" >/profile/*</text>
+<text x="316" y="732.0" font-size="11" font-weight="500" fill="#6b7280" text-anchor="start" >:5311</text>
+<line x1="510" y1="718.0" x2="588" y2="718.0" stroke="#2563eb" stroke-width="2" marker-end="url(#e-2563eb)"/>
+<line x1="1112" y1="718.0" x2="1168" y2="718.0" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<text x="308" y="250" font-size="11" font-weight="400" fill="#6b7280" text-anchor="start" >Strips the prefix; health-checks</text>
+<text x="308" y="265" font-size="11" font-weight="400" fill="#6b7280" text-anchor="start" >and retries on another instance</text>
+<rect x="40" y="520" width="180" height="170" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2" />
+<rect x="40" y="520" width="180" height="26" rx="14" fill="#2563eb"/>
+<rect x="40" y="533" width="180" height="13" fill="#2563eb"/>
+<circle cx="56" cy="533" r="4" fill="#fff" opacity="0.8"/>
+<circle cx="69" cy="533" r="4" fill="#fff" opacity="0.8"/>
+<circle cx="82" cy="533" r="4" fill="#fff" opacity="0.8"/>
+<text x="58" y="578" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >Storefront</text>
+<text x="58" y="600" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >Nuxt 4 SPA</text>
+<text x="58" y="620" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >shop.localtest.me</text>
+<text x="58" y="648" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >Calls the APIs straight</text>
+<text x="58" y="665" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >from the browser</text>
+<line x1="220" y1="605" x2="288" y2="605" stroke="#2563eb" stroke-width="2" marker-end="url(#e-2563eb)"/>
+<text x="40" y="734" font-size="13" font-weight="600" fill="#2563eb" text-anchor="start" >One API origin.</text>
+<text x="40" y="754" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >The shop never knows how</text>
+<text x="40" y="770" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >many instances there are,</text>
+<text x="40" y="786" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >or that anything is async.</text>
+<text x="1300" y="236" font-size="11" font-weight="700" fill="#6b7280" text-anchor="start" letter-spacing="2">BACK OFFICE</text>
+<rect x="1300" y="250" width="560" height="148" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" />
+<text x="1318" y="280" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >CatalogManager</text>
+<text x="1318" y="302" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >MVC · :5003</text>
+<text x="1318" y="320" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >catalog-manager.localtest.me</text>
+<text x="1318" y="342" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >SQL Server · EF Core</text>
+<text x="1318" y="362" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Edit prices, publish the catalog</text>
+<text x="1318" y="378" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Serves GET /api/products</text>
+<line x1="1562" y1="266" x2="1562" y2="382" stroke="#d1d5db"/>
+<text x="1578" y="276" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">PUBLISHES / SENDS</text>
+<text x="1578" y="292" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >NewCatalogAvailable</text>
+<line x1="1242" y1="324.0" x2="1298" y2="324.0" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="1300" y="414" width="560" height="132" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" />
+<text x="1318" y="444" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >Warehouse</text>
+<text x="1318" y="466" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >MVC · :5223</text>
+<text x="1318" y="484" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >warehouse.localtest.me</text>
+<text x="1318" y="506" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >Postgres · Marten</text>
+<text x="1318" y="526" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Stock, receiving, dispatch</text>
+<line x1="1562" y1="430" x2="1562" y2="530" stroke="#d1d5db"/>
+<text x="1578" y="440" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">PUBLISHES / SENDS</text>
+<text x="1578" y="456" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >OrderProcessed</text>
+<text x="1578" y="471" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >LowStockWarning · OutOfStock</text>
+<text x="1578" y="492" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">HANDLES</text>
+<text x="1578" y="508" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >OrderConfirmedEvent</text>
+<line x1="1242" y1="480.0" x2="1298" y2="480.0" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="1300" y="562" width="560" height="132" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" />
+<text x="1318" y="592" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >PaymentGateway</text>
+<text x="1318" y="614" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >Web API · :5195</text>
+<text x="1318" y="632" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Bus only, no Caddy route</text>
+<text x="1318" y="654" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >In memory</text>
+<text x="1318" y="674" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Mock processor, fails first attempt</text>
+<line x1="1562" y1="578" x2="1562" y2="678" stroke="#d1d5db"/>
+<text x="1578" y="588" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">PUBLISHES / SENDS</text>
+<text x="1578" y="604" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >PaymentSuccessful</text>
+<text x="1578" y="625" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">HANDLES</text>
+<text x="1578" y="641" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >OrderPlaced</text>
+<line x1="1242" y1="628.0" x2="1298" y2="628.0" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="1300" y="710" width="560" height="132" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" />
+<text x="1318" y="740" font-size="18" font-weight="700" fill="#1f2937" text-anchor="start" >Email</text>
+<text x="1318" y="762" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >Web API · :5299</text>
+<text x="1318" y="780" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Bus only, no Caddy route</text>
+<text x="1318" y="802" font-size="12" font-weight="400" fill="#1f2937" text-anchor="start" >MailKit → SMTP (Mailpit)</text>
+<text x="1318" y="822" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Templated emails</text>
+<line x1="1562" y1="726" x2="1562" y2="826" stroke="#d1d5db"/>
+<text x="1578" y="736" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">PUBLISHES / SENDS</text>
+<text x="1578" y="752" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >SendEmailCommand (to itself)</text>
+<text x="1578" y="773" font-size="10" font-weight="700" fill="#d97706" text-anchor="start" letter-spacing="1.5">HANDLES</text>
+<text x="1578" y="789" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >CustomerRegistered · OrderCompleted</text>
+<text x="1578" y="804" font-size="12" font-weight="500" fill="#1f2937" text-anchor="start" >SendEmailCommand</text>
+<line x1="1242" y1="776.0" x2="1298" y2="776.0" stroke="#d97706" stroke-width="2" marker-start="url(#s-d97706)" marker-end="url(#e-d97706)"/>
+<rect x="1170" y="236" width="70" height="606" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
+<text x="1212.0" y="539.0" font-size="20" font-weight="700" fill="#d97706" text-anchor="middle" transform="rotate(-90 1205.0 539.0)">NATS JetStream  ·  Nimbus bus</text>
+<path d="M990,248 V200 H1500 V246" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#e-6b7280)"/>
+<text x="1004" y="190" font-size="12" font-weight="500" fill="#6b7280" text-anchor="start" >GET /api/products — Catalog, Search and Orders fetch the catalog after NewCatalogAvailable</text>
+<text x="40" y="882" font-size="11" font-weight="700" fill="#6b7280" text-anchor="start" letter-spacing="2">LOCAL INFRASTRUCTURE (DOCKER)</text>
+<rect x="40.0" y="896" width="351.2" height="56" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="56.0" y="920" font-size="14" font-weight="700" fill="#1f2937" text-anchor="start" >Postgres :5432</text>
+<text x="56.0" y="939" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Catalog, Search, Warehouse</text>
+<rect x="407.2" y="896" width="351.2" height="56" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="423.2" y="920" font-size="14" font-weight="700" fill="#1f2937" text-anchor="start" >SQL Server :1433</text>
+<text x="423.2" y="939" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Profile, Orders, CatalogManager</text>
+<rect x="774.4" y="896" width="351.2" height="56" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="790.4" y="920" font-size="14" font-weight="700" fill="#d97706" text-anchor="start" >NATS :4222</text>
+<text x="790.4" y="939" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >JetStream transport for Nimbus</text>
+<rect x="1141.6" y="896" width="351.2" height="56" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="1157.6" y="920" font-size="14" font-weight="700" fill="#1f2937" text-anchor="start" >Seq</text>
+<text x="1157.6" y="939" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Logs; filter by CorrelationId</text>
+<rect x="1508.8" y="896" width="351.2" height="56" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+<text x="1524.8" y="920" font-size="14" font-weight="700" fill="#1f2937" text-anchor="start" >Mailpit</text>
+<text x="1524.8" y="939" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >SMTP :1025, mail.localtest.me</text>
+<text x="40" y="1002" font-size="11" font-weight="700" fill="#6b7280" text-anchor="start" letter-spacing="2">MESSAGE CHAINS</text>
+<text x="40" y="1022" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start" >Each hop is a Nimbus message; the correlation id follows the whole chain across services.</text>
+<text x="40" y="1071" font-size="13" font-weight="700" fill="#1f2937" text-anchor="start" >Publishing the catalog</text>
+<rect x="215" y="1050" width="124.8" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="277.4" y="1071" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >CatalogManager</text>
+<line x1="342.8" y1="1066" x2="358.8" y2="1066" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="361.8" y="1050" width="160.79999999999998" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="442.2" y="1071" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >NewCatalogAvailable</text>
+<line x1="525.6" y1="1066" x2="541.6" y2="1066" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="544.6" y="1050" width="204.0" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="646.6" y="1071" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Catalog · Search · Orders</text>
+<line x1="751.6" y1="1066" x2="767.6" y2="1066" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="770.6" y="1050" width="124.8" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="833.0" y="1071" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >CatalogUpdated</text>
+<line x1="898.4" y1="1066" x2="914.4" y2="1066" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="917.4" y="1050" width="182.4" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="1008.6" y="1071" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >every Catalog instance</text>
+<text x="40" y="1123" font-size="13" font-weight="700" fill="#1f2937" text-anchor="start" >Signing up</text>
+<rect x="215" y="1102" width="74.4" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="252.2" y="1123" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Profile</text>
+<line x1="292.4" y1="1118" x2="308.4" y2="1118" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="311.4" y="1102" width="153.6" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="388.2" y="1123" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >CustomerRegistered</text>
+<line x1="468.0" y1="1118" x2="484.0" y2="1118" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="487.0" y="1102" width="60.0" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="517.0" y="1123" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Email</text>
+<line x1="550.0" y1="1118" x2="566.0" y2="1118" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="569.0" y="1102" width="139.2" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="638.6" y="1123" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >SendEmailCommand</text>
+<line x1="711.2" y1="1118" x2="727.2" y2="1118" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="730.2" y="1102" width="110.39999999999999" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="785.4000000000001" y="1123" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Email → SMTP</text>
+<text x="40" y="1175" font-size="13" font-weight="700" fill="#1f2937" text-anchor="start" >Placing an order</text>
+<rect x="215" y="1154" width="67.19999999999999" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="248.6" y="1175" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Orders</text>
+<line x1="285.2" y1="1170" x2="301.2" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="304.2" y="1154" width="103.2" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="355.8" y="1175" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >OrderPlaced</text>
+<line x1="410.4" y1="1170" x2="426.4" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="429.4" y="1154" width="124.8" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="491.79999999999995" y="1175" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >PaymentGateway</text>
+<line x1="557.1999999999999" y1="1170" x2="573.1999999999999" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="576.1999999999999" y="1154" width="146.39999999999998" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="649.3999999999999" y="1175" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >PaymentSuccessful</text>
+<line x1="725.5999999999999" y1="1170" x2="741.5999999999999" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="744.5999999999999" y="1154" width="67.19999999999999" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="778.1999999999999" y="1175" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Orders</text>
+<line x1="814.8" y1="1170" x2="830.8" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="833.8" y="1154" width="160.79999999999998" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="914.1999999999999" y="1175" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >OrderConfirmedEvent</text>
+<line x1="997.5999999999999" y1="1170" x2="1013.5999999999999" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="1016.5999999999999" y="1154" width="88.8" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="1061.0" y="1175" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Warehouse</text>
+<line x1="1108.3999999999999" y1="1170" x2="1124.3999999999999" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="1127.3999999999999" y="1154" width="124.8" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="1189.8" y="1175" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >OrderProcessed</text>
+<line x1="1255.1999999999998" y1="1170" x2="1271.1999999999998" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="1274.1999999999998" y="1154" width="67.19999999999999" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="1307.7999999999997" y="1175" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Orders</text>
+<line x1="1344.3999999999999" y1="1170" x2="1360.3999999999999" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="1363.3999999999999" y="1154" width="124.8" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="1425.8" y="1175" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >OrderCompleted</text>
+<line x1="1491.1999999999998" y1="1170" x2="1507.1999999999998" y2="1170" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="1510.1999999999998" y="1154" width="60.0" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="1540.1999999999998" y="1175" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Email</text>
+<text x="40" y="1227" font-size="13" font-weight="700" fill="#1f2937" text-anchor="start" >Running low</text>
+<rect x="215" y="1206" width="196.79999999999998" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="313.4" y="1227" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Warehouse pick or import</text>
+<line x1="414.79999999999995" y1="1222" x2="430.79999999999995" y2="1222" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="433.79999999999995" y="1206" width="225.6" height="32" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" />
+<text x="546.5999999999999" y="1227" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle" >LowStockWarning · OutOfStock</text>
+<line x1="662.4" y1="1222" x2="678.4" y2="1222" stroke="#d97706" stroke-width="1.6" marker-end="url(#e-d97706)"/>
+<rect x="681.4" y="1206" width="254.39999999999998" height="32" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.2" />
+<text x="808.5999999999999" y="1227" font-size="12" font-weight="700" fill="#1f2937" text-anchor="middle" >Catalog + every Catalog instance</text>
+</svg>

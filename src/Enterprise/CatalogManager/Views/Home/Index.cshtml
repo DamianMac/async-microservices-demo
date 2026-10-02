@@ -1,0 +1,125 @@
+@model DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+    ViewData["Section"] = "dashboard";
+}
+
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-subtitle">Manage the product catalog and publish it to the storefront.</p>
+    </div>
+    <a class="btn btn-primary" asp-controller="Products" asp-action="Import">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
+        Import products
+    </a>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl-3">
+        <div class="panel stat">
+            <div class="stat-label">Products</div>
+            <div class="stat-value">@Model.ProductCount</div>
+            <div class="stat-hint">In the catalog</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="panel stat">
+            <div class="stat-label">Needs pricing</div>
+            <div class="stat-value">@Model.NeedsPricingCount</div>
+            <div class="stat-hint">No price set</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="panel stat">
+            <div class="stat-label">Ready to publish</div>
+            <div class="stat-value">@Model.ReadyToPublishCount</div>
+            <div class="stat-hint">Priced, not yet live</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="panel stat">
+            <div class="stat-label">Published</div>
+            <div class="stat-value">@Model.PublishedCount</div>
+            <div class="stat-hint">Live on the storefront</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="panel h-100">
+            <div class="panel-header">
+                <h2 class="panel-title">Recently updated</h2>
+                @if (Model.ProductCount > 0)
+                {
+                    <a class="small" asp-controller="Products" asp-action="Index">View all products</a>
+                }
+            </div>
+            @if (Model.ProductCount == 0)
+            {
+                <div class="empty-state">
+                    <div class="empty-state-icon">
+                        <svg viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
+                    </div>
+                    <h2>No products yet</h2>
+                    <p>Import the product list to start building the catalog. Once products are in, you can set their prices and publish them to the storefront.</p>
+                    <a class="btn btn-primary" asp-controller="Products" asp-action="Import">Import products</a>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table data-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th class="num">Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.RecentProducts)
+                            {
+                                <partial name="_ProductRow" model="product" />
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel h-100">
+            <div class="panel-header">
+                <h2 class="panel-title">Publishing workflow</h2>
+            </div>
+            <div class="panel-body py-1">
+                <ol class="steps">
+                    <li class="step">
+                        <span class="step-num">1</span>
+                        <div>
+                            <div class="step-title">Import</div>
+                            <div class="step-desc">Load the product list into the catalog as drafts.</div>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">2</span>
+                        <div>
+                            <div class="step-title">Price</div>
+                            <div class="step-desc">Set a retail price for each product.</div>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">3</span>
+                        <div>
+                            <div class="step-title">Publish</div>
+                            <div class="step-desc">Send products and prices to the storefront.</div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

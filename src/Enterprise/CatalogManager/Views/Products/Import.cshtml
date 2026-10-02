@@ -1,0 +1,45 @@
+@model ImportViewModel
+@{
+    ViewData["Title"] = "Import products";
+    ViewData["Section"] = "import";
+}
+
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Import products</h1>
+        <p class="page-subtitle">Load the product list JSON into the catalog.</p>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-lg-7">
+        <form class="panel" asp-action="Import" method="post">
+            <div class="panel-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <label class="form-label fw-medium" asp-for="Path"></label>
+                <input class="form-control font-monospace" asp-for="Path" />
+                <span class="text-danger small" asp-validation-for="Path"></span>
+                <div class="form-text">Relative paths are resolved from the app's folder. Product images are read from <code>images/rendered</code> next to the file.</div>
+            </div>
+            <div class="panel-footer">
+                <a class="btn btn-link text-secondary" asp-action="Index">Cancel</a>
+                <button class="btn btn-primary" type="submit">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
+                    Import
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-5">
+        <div class="panel">
+            <div class="panel-header"><h2 class="panel-title">How the import works</h2></div>
+            <div class="panel-body">
+                <ul class="notes">
+                    <li>Products are matched on SKU, so importing again updates them rather than adding duplicates.</li>
+                    <li>New products take their price from the file. Existing products keep the price set here.</li>
+                    <li>Imported products start as drafts until they're published.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

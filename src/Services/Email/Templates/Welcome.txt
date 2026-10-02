@@ -1,0 +1,17 @@
+Subject: Welcome to Nimbus Coffee Co., {{FirstName}}
+
+Hi {{FirstName}},
+
+Thanks for joining Nimbus Coffee Co. Your account is all set up under {{Email}}.
+
+A few things you can do now:
+
+  - Save a delivery address and a card for a quicker checkout
+  - Browse this week's single origins, roasted fresh every Tuesday
+  - Get free shipping on orders over $60
+
+Start shopping: {{ShopUrl}}/shop
+Your account:   {{ShopUrl}}/account
+
+Happy brewing,
+The Nimbus Coffee Co. team

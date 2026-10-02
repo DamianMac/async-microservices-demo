@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="11.0.2" />
+    <PackageReference Include="dbup-sqlserver" Version="7.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.20" />
+    <PackageReference Include="Nimbus.Transports.Nats" Version="1.0.0" />
+    <PackageReference Include="Nimbus" Version="4.3.3" />
+    <PackageReference Include="Nimbus.Containers.Autofac" Version="4.3.3" />
+    <PackageReference Include="Nimbus.Extensions.Pulse" Version="1.1.0" />
+    <PackageReference Include="Nimbus.Logger.Serilog" Version="4.3.3" />
+    <PackageReference Include="Nimbus.Serializers.Json" Version="4.3.3" />
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="9.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Migration\*.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Orders.Messages\Orders.Messages.csproj" />
+    <ProjectReference Include="..\PaymentGateway.Messages\PaymentGateway.Messages.csproj" />
+    <ProjectReference Include="..\..\Enterprise\Warehouse.Messages\Warehouse.Messages.csproj" />
+    <ProjectReference Include="..\..\Enterprise\CatalogManager.Messages\CatalogManager.Messages.csproj" />
+    <ProjectReference Include="..\..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+</Project>
